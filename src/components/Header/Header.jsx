@@ -2,6 +2,7 @@ import logo from "@/assets/logo.png";
 import { format } from "date-fns";
 import Image from "next/image";
 import MyContainer from "../Container/MyContainer";
+import BreakingNews from "./BreakingNews";
 
 const Header = () => {
   return (
@@ -18,6 +19,7 @@ const Header = () => {
         <p className="text-[#706F6F] mt-2.5">
           {format(new Date(), "EEE, MMM dd, yyyy")}
         </p>
+        <BreakingNews />
       </div>
     </MyContainer>
   );
