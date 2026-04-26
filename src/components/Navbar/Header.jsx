@@ -1,9 +1,11 @@
-import React from "react";
+import logo from "@/assets/logo.png";
+import Image from "next/image";
 
 const Header = () => {
   return (
     <div>
-      <p>Header</p>
+      <Image src={logo} alt="Dragon news logo" />
+      <p className="text-[#706F6F]">Journalism Without Fear or Favour</p>
     </div>
   );
 };
