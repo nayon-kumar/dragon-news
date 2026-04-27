@@ -25,7 +25,7 @@ const NewsCard = ({ singleNews }) => {
                 {singleNews.author.name}
               </h4>
               <p className="text-[#706F6F]">
-                {singleNews.author.published_date}
+                {singleNews.author?.published_date?.split(" ")[0]}
               </p>
             </div>
           </div>
@@ -36,7 +36,7 @@ const NewsCard = ({ singleNews }) => {
         </div>
       </div>
       <div className="px-5">
-        <Link href="/">
+        <Link href={`/details/${singleNews._id}`}>
           <h3 className="font-bold text-xl mt-3.5">{singleNews.title}</h3>
           <Image
             src={singleNews.image_url}
