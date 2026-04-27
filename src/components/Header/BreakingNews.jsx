@@ -19,11 +19,11 @@ const news = [
 const BreakingNews = () => {
   return (
     <div className="mt-7.5">
-      <div className="flex bg-[#F3F3F3] p-4">
-        <div className="bg-[#D72050] px-6 py-2.25 text-white font-medium text-xl">
+      <div className="flex bg-[#F3F3F3] rounded-lg p-4">
+        <div className="bg-[#D72050] px-6 py-2.25 rounded-l-lg text-white font-medium text-xl">
           Latest
         </div>
-        <Marquee>
+        <Marquee pauseOnHover>
           {news.map((n) => (
             <span key={n._id}>{n.title}</span>
           ))}
