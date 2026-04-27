@@ -8,11 +8,10 @@ const getCategories = async () => {
   return res.json();
 };
 
-const Categories = async () => {
-  const activeID = "01";
+const Categories = async ({ id }) => {
+  const activeID = id;
   const data = await getCategories();
   const categories = data.data.news_category;
-  console.log(categories);
   return (
     <div>
       <h4 className="text-[#403F3F] font-semibold text-xl">All Caterogy</h4>
