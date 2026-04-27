@@ -19,7 +19,6 @@ const Header = () => {
         <p className="text-[#706F6F] mt-2.5">
           {format(new Date(), "EEE, MMM dd, yyyy")}
         </p>
-        <BreakingNews />
       </div>
     </MyContainer>
   );

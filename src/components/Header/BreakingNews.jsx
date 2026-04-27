@@ -23,7 +23,7 @@ const BreakingNews = () => {
         <div className="bg-[#D72050] px-6 py-2.25 rounded-l-lg text-white font-medium text-xl">
           Latest
         </div>
-        <Marquee pauseOnHover>
+        <Marquee pauseOnHover={true}>
           {news.map((n) => (
             <span key={n._id}>{n.title}</span>
           ))}
