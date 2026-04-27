@@ -1,5 +1,6 @@
 import MyContainer from "@/components/Container/MyContainer";
 import Categories from "@/components/Home/Categories";
+import LoginWith from "@/components/Home/LoginWith";
 
 export default function Home() {
   return (
@@ -12,8 +13,8 @@ export default function Home() {
           <div className="border-2 md:col-span-6">
             <p>All Categories</p>
           </div>
-          <div className="border-2 md:col-span-3">
-            <p>All Categories</p>
+          <div className="md:col-span-3">
+            <LoginWith />
           </div>
         </MyContainer>
       </main>

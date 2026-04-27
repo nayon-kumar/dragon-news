@@ -9,6 +9,7 @@ const getCategories = async () => {
 };
 
 const Categories = async () => {
+  const activeID = "01";
   const data = await getCategories();
   const categories = data.data.news_category;
   console.log(categories);
@@ -18,8 +19,8 @@ const Categories = async () => {
       <div className="flex flex-col gap-2 mt-5 ">
         {categories.map((categorie) => (
           <Link
-            className="py-2 border border-gray-300 px-5 rounded-md"
-            href="/"
+            className={`py-2 border border-gray-300 px-5 rounded-md ${activeID === categorie.category_id ? "text-[#403F3F] font-medium  bg-[#E7E7E7]" : "text-[#9F9F9F]"}`}
+            href={`/category/${categorie.category_id}`}
             key={categorie.category_id}
           >
             {categorie.category_name}
