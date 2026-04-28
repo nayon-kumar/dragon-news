@@ -2,12 +2,16 @@
 import MyContainer from "@/components/Container/MyContainer";
 import Link from "next/link";
 import React from "react";
+import { useForm } from "react-hook-form";
 
 const SignInPage = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    console.log(email);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const handleLogin = (data) => {
+    console.log(data);
   };
 
   return (
@@ -16,27 +20,41 @@ const SignInPage = () => {
         <h3 className="font-semibold text-3xl text-[#403F3F] text-center">
           Login your account
         </h3>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(handleLogin)}>
           <fieldset className="fieldset ">
             <label className="label font-semibold text-lg text-[#403F3F] mt-10">
               Email address
             </label>
             <input
-              name="email"
+              {...register("email", {
+                required: "Email field is required",
+              })}
               type="email"
               className="input w-full mt-2"
               placeholder="Enter your email address"
             />
+            {errors.email && (
+              <p className="text-red-500">{errors.email.message}</p>
+            )}
 
-            <label className="label font-semibold text-lg mt-6 text-[#403F3F]">
+            <label className="label font-semibold text-lg mt-4 text-[#403F3F]">
               Password
             </label>
             <input
-              name="password"
+              {...register("password", {
+                required: "Password field is required",
+                minLength: {
+                  value: 8,
+                  message: "Password must be at least 8 characters",
+                },
+              })}
               type="password"
               className="input w-full mt-2"
               placeholder="Password"
             />
+            {errors.password && (
+              <p className="text-red-500">{errors.password.message}</p>
+            )}
 
             <button type="submit" className="btn btn-neutral mt-6">
               Login
