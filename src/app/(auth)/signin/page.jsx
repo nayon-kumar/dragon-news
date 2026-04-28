@@ -17,7 +17,7 @@ const SignInPage = () => {
   return (
     <MyContainer className="my-20">
       <div className="bg-base-200 border-base-300 rounded-box  border px-5 py-15 max-w-160 mx-auto">
-        <h3 className="font-semibold text-3xl text-[#403F3F] text-center">
+        <h3 className="font-semibold text-2xl md:text-3xl text-[#403F3F] text-center">
           Login your account
         </h3>
         <form onSubmit={handleSubmit(handleLogin)}>
@@ -28,8 +28,12 @@ const SignInPage = () => {
             <input
               {...register("email", {
                 required: "Email field is required",
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Please enter a valid email address",
+                },
               })}
-              type="email"
+              type="text"
               className="input w-full mt-2"
               placeholder="Enter your email address"
             />
