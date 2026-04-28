@@ -1,4 +1,5 @@
 import MyContainer from "@/components/Container/MyContainer";
+import NewsDetails from "@/components/Details/NewsDetails";
 import LoginWith from "@/components/Home/LoginWith";
 import React from "react";
 const getNews = async (newsID) => {
@@ -12,11 +13,12 @@ const getNews = async (newsID) => {
 const DetailsPage = async ({ params }) => {
   const { id } = await params;
   const news = await getNews(id);
-  console.log(news);
   return (
     <MyContainer className="mt-7.5">
       <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-9">Details</div>
+        <div className="col-span-9">
+          <NewsDetails news={news} />
+        </div>
         <div className="col-span-3">
           <LoginWith />
         </div>
