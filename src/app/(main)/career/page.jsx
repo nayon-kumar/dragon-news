@@ -1,5 +1,6 @@
-import React from "react";
-
+export const metadata = {
+  title: "Career Page - Dragon News",
+};
 const CareerPage = () => {
   return (
     <div>
