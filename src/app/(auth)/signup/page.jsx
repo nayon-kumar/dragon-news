@@ -1,5 +1,6 @@
 "use client";
 import MyContainer from "@/components/Container/MyContainer";
+import { authClient } from "@/lib/auth-client";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -9,8 +10,9 @@ const SignUpPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const handleRegister = (data) => {
-    console.log(data);
+  const handleRegister = async (data) => {
+    const { data: newData, error } = await authClient.signUp.email(data);
+    console.log(newData, error);
   };
 
   return (
