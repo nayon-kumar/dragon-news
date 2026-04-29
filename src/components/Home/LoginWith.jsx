@@ -1,13 +1,31 @@
+"use client";
+import { authClient } from "@/lib/auth-client";
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const LoginWith = () => {
+  const handleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+    console.log(data);
+  };
+
+  const handleGigHubSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "github",
+    });
+  };
+
   return (
     <div>
       <p className="font-semibold text-[#403F3F] text-xl">Login With</p>
       <div className="flex flex-col gap-4 mt-5">
         {/* Google */}
-        <button className="btn bg-white text-black border-[#e5e5e5] w-full">
+        <button
+          onClick={handleGoogleSignIn}
+          className="btn bg-white text-black border-[#e5e5e5] w-full"
+        >
           <svg
             aria-label="Google logo"
             width="16"
@@ -38,7 +56,10 @@ const LoginWith = () => {
           Google
         </button>
         {/* GitHub */}
-        <button className="btn bg-white text-black border-[#e5e5e5] w-full">
+        <button
+          onClick={handleGigHubSignIn}
+          className="btn bg-white text-black border-[#e5e5e5] w-full"
+        >
           <svg
             aria-label="GitHub logo"
             width="16"
