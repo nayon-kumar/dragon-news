@@ -1,11 +1,15 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import MyContainer from "../Container/MyContainer";
 import profile from "@/assets/user.png";
 import Image from "next/image";
 import NavLink from "./NavLink";
+import { authClient } from "@/lib/auth-client";
 
 const Navbar = () => {
+  const { data } = authClient.useSession();
+  const user = data?.user;
   return (
     <MyContainer className="flex flex-wrap gap-4 items-center justify-around sm:justify-between mt-6">
       <div className="hidden sm:flex"></div>
@@ -21,9 +25,14 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="flex items-center gap-2.25">
+        {user && <p>Hello, {user?.name}</p>}
         <Image src={profile} height={41} width={41} alt="Profile" />
         <button className="btn text-white font-semibold lg:text-xl bg-[#403F3F]">
-          <Link href="/signin">Login</Link>
+          {user ? (
+            <p onClick={async () => await authClient.signOut()}>Logout</p>
+          ) : (
+            <Link href="/signin">Login</Link>
+          )}
         </button>
       </div>
     </MyContainer>

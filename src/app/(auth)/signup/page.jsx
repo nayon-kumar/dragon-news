@@ -2,11 +2,13 @@
 import MyContainer from "@/components/Container/MyContainer";
 import { authClient } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const SignUpPage = () => {
+  const [isShowPass, setIsShowPass] = useState(false);
   const {
     register,
     handleSubmit,
@@ -70,23 +72,28 @@ const SignUpPage = () => {
             <label className="label font-semibold text-lg mt-6 text-[#403F3F]">
               Password
             </label>
-            <input
-              {...register("password", {
-                required: "Password field is required",
-                minLength: {
-                  value: 8,
-                  message: "Password must be at least 8 characters",
-                },
-                pattern: {
-                  value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/,
-                  message:
-                    "Password must include uppercase, lowercase, and a number",
-                },
-              })}
-              type="password"
-              className="input w-full mt-2"
-              placeholder="Password"
-            />
+            <div className="mt-2">
+              <div className="input w-full">
+                <input
+                  {...register("password", {
+                    required: "Password field is required",
+                    minLength: {
+                      value: 8,
+                      message: "Password must be at least 8 characters",
+                    },
+                  })}
+                  type={isShowPass ? "text" : "password"}
+                  placeholder="Password"
+                />
+
+                <span
+                  onClick={() => setIsShowPass(!isShowPass)}
+                  className="cursor-pointer"
+                >
+                  {isShowPass ? <FaEye size={20} /> : <FaEyeSlash size={20} />}
+                </span>
+              </div>
+            </div>
             {errors.password && (
               <p className="text-red-500">{errors.password.message}</p>
             )}
