@@ -3,6 +3,7 @@ import MyContainer from "@/components/Container/MyContainer";
 import { authClient } from "@/lib/auth-client";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
   const {
@@ -12,7 +13,11 @@ const SignUpPage = () => {
   } = useForm();
   const handleRegister = async (data) => {
     const { data: newData, error } = await authClient.signUp.email(data);
-    console.log(newData, error);
+    if (error) {
+      toast.error(error.message, { position: "bottom-center" });
+    } else {
+      toast.success("Sign up successfully!", { position: "bottom-center" });
+    }
   };
 
   return (
