@@ -1,8 +1,10 @@
 "use client";
 import MyContainer from "@/components/Container/MyContainer";
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const SignInPage = () => {
   const {
@@ -10,8 +12,13 @@ const SignInPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const handleLogin = (data) => {
-    console.log(data);
+  const handleLogin = async (data) => {
+    const { data: newData, error } = await authClient.signIn.email(data);
+    if (error) {
+      toast.error(error.message, { position: "bottom-center" });
+    } else {
+      toast.success("Sign in successfully!", { position: "bottom-center" });
+    }
   };
 
   return (

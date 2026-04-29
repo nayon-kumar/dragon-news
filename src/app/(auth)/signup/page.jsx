@@ -1,6 +1,7 @@
 "use client";
 import MyContainer from "@/components/Container/MyContainer";
 import { authClient } from "@/lib/auth-client";
+import { redirect } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -12,11 +13,17 @@ const SignUpPage = () => {
     formState: { errors },
   } = useForm();
   const handleRegister = async (data) => {
-    const { data: newData, error } = await authClient.signUp.email(data);
+    const { data: newData, error } = await authClient.signUp.email({
+      name: data.name,
+      email: data.email,
+      password: data.password,
+      callbackURL: "/",
+    });
     if (error) {
       toast.error(error.message, { position: "bottom-center" });
     } else {
       toast.success("Sign up successfully!", { position: "bottom-center" });
+      redirect("/signin");
     }
   };
 
