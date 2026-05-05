@@ -10,7 +10,6 @@ const AboutPage = () => {
     <MyContainer>
       <div className="pt-15">
         <div className="max-w-6xl mx-auto px-4">
-          {/* Heading */}
           <div className="text-center mb-10">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
               About Us
@@ -32,7 +31,7 @@ const AboutPage = () => {
           </div>
 
           <div className="mt-12 grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-2xl shadow">
+            <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1">
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 Our Mission
               </h3>
@@ -43,7 +42,7 @@ const AboutPage = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl shadow">
+            <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1">
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 Our Vision
               </h3>
@@ -56,41 +55,41 @@ const AboutPage = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
               Our Team
             </h2>
 
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-              <div className="bg-white p-5 rounded-2xl shadow">
+              <div className="bg-white p-5 rounded-2xl shadow hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1">
                 <Image
                   src="https://i.ibb.co.com/ffM44wp/Ellipse-1-10.png"
                   alt="Team Member"
-                  width={50}
-                  height={50}
+                  width={80}
+                  height={80}
                   className="w-24 h-24 mx-auto rounded-full mb-4"
                 />
                 <h4 className="text-lg font-semibold">Mona</h4>
                 <p className="text-gray-500 text-sm">Editor-in-Chief</p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl shadow">
+              <div className="bg-white p-5 rounded-2xl shadow hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1">
                 <Image
                   src="https://i.ibb.co.com/RGXwMmSJ/Ellipse-1-1.png"
                   alt="Team Member"
-                  width={50}
-                  height={50}
+                  width={80}
+                  height={80}
                   className="w-24 h-24 mx-auto rounded-full mb-4"
                 />
                 <h4 className="text-lg font-semibold">Jane Smith</h4>
                 <p className="text-gray-500 text-sm">Senior Journalist</p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl shadow">
+              <div className="bg-white p-5 rounded-2xl shadow hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1">
                 <Image
                   src="https://i.ibb.co.com/8FyK7Xp/Ellipse-1-4.png"
                   alt="Team Member"
-                  width={50}
-                  height={50}
+                  width={80}
+                  height={80}
                   className="w-24 h-24 mx-auto rounded-full mb-4"
                 />
                 <h4 className="text-lg font-semibold">Alex Pop</h4>

@@ -20,7 +20,6 @@ const CareerPage = () => {
           </MyContainer>
         </section>
 
-        {/* Why Work With Us */}
         <section className="py-16">
           <MyContainer>
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
@@ -28,7 +27,7 @@ const CareerPage = () => {
             </h2>
 
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="card bg-base-200 p-6 shadow">
+              <div className="card bg-base-200 p-6 shadow hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1">
                 <h3 className="text-xl font-semibold mb-2">💡 Innovation</h3>
                 <p>
                   Work with modern technologies like Next.js and build scalable
@@ -36,7 +35,7 @@ const CareerPage = () => {
                 </p>
               </div>
 
-              <div className="card bg-base-200 p-6 shadow">
+              <div className="card bg-base-200 p-6 shadow hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1">
                 <h3 className="text-xl font-semibold mb-2">🌱 Growth</h3>
                 <p>
                   Continuous learning environment with mentorship and real-world
@@ -44,7 +43,7 @@ const CareerPage = () => {
                 </p>
               </div>
 
-              <div className="card bg-base-200 p-6 shadow">
+              <div className="card bg-base-200 p-6 shadow hover:shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-1">
                 <h3 className="text-xl font-semibold mb-2">🤝 Culture</h3>
                 <p>
                   Friendly team, flexible work environment, and supportive
@@ -55,7 +54,6 @@ const CareerPage = () => {
           </MyContainer>
         </section>
 
-        {/* Job Listings */}
         <section className="py-16 bg-base-200">
           <MyContainer>
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
@@ -63,7 +61,6 @@ const CareerPage = () => {
             </h2>
 
             <div className="space-y-6">
-              {/* Job Card */}
               <div className="card bg-base-100 shadow p-6 flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div>
                   <h3 className="text-xl font-semibold">
@@ -107,7 +104,6 @@ const CareerPage = () => {
           </MyContainer>
         </section>
 
-        {/* CTA Section */}
         <section className="pt-16 text-center">
           <MyContainer>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
