@@ -26,8 +26,8 @@ const Navbar = () => {
       </ul>
       <div className="flex items-center gap-2.25">
         {user && <p>Hello, {user?.name}</p>}
-        <Image src={profile} height={41} width={41} alt="Profile" />
-        <button className="btn text-white font-semibold lg:text-xl bg-[#403F3F]">
+        <Image src={profile} height={30} width={30} alt="Profile" />
+        <button className="btn text-white bg-[#403F3F]">
           {user ? (
             <p onClick={async () => await authClient.signOut()}>Logout</p>
           ) : (
