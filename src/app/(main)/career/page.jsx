@@ -8,7 +8,7 @@ const CareerPage = () => {
     <MyContainer className="mt-10">
       <div className="bg-base-100 text-base-content">
         <section className="py-16 text-center bg-base-200">
-          <MyContainer>
+          <div>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
               Join Our Team
             </h2>
@@ -17,11 +17,11 @@ const CareerPage = () => {
               about technology, creativity, and innovation - we would love to
               have you with us.
             </p>
-          </MyContainer>
+          </div>
         </section>
 
         <section className="py-16">
-          <MyContainer>
+          <div>
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
               Why Work With Us?
             </h2>
@@ -51,11 +51,11 @@ const CareerPage = () => {
                 </p>
               </div>
             </div>
-          </MyContainer>
+          </div>
         </section>
 
-        <section className="py-16 bg-base-200">
-          <MyContainer>
+        <section className="py-16 bg-base-200 px-5">
+          <div>
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
               Open Positions
             </h2>
@@ -101,11 +101,11 @@ const CareerPage = () => {
                 </button>
               </div>
             </div>
-          </MyContainer>
+          </div>
         </section>
 
         <section className="pt-16 text-center">
-          <MyContainer>
+          <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Don't See Your Role?
             </h2>
@@ -114,7 +114,7 @@ const CareerPage = () => {
               we'll get in touch when a suitable role opens.
             </p>
             <button className="btn btn-outline btn-primary">Send Resume</button>
-          </MyContainer>
+          </div>
         </section>
       </div>
     </MyContainer>

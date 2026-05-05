@@ -9,7 +9,7 @@ const AboutPage = () => {
   return (
     <MyContainer>
       <div className="pt-15">
-        <div className="max-w-6xl mx-auto px-4">
+        <div>
           <div className="text-center mb-10">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
               About Us
