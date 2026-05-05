@@ -27,13 +27,18 @@ const Navbar = () => {
       <div className="flex items-center gap-2.25">
         {user && <p>Hello, {user?.name}</p>}
         <Image src={profile} height={30} width={30} alt="Profile" />
-        <button className="btn text-white bg-[#403F3F]">
-          {user ? (
-            <p onClick={async () => await authClient.signOut()}>Logout</p>
-          ) : (
-            <Link href="/signin">Login</Link>
-          )}
-        </button>
+        {user ? (
+          <button
+            onClick={async () => await authClient.signOut()}
+            className="btn text-white bg-[#403F3F]"
+          >
+            Logout
+          </button>
+        ) : (
+          <Link className="btn text-white bg-[#403F3F]" href="/signin">
+            Login
+          </Link>
+        )}
       </div>
     </MyContainer>
   );
