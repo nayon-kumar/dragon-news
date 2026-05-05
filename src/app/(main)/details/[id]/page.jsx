@@ -24,11 +24,11 @@ const DetailsPage = async ({ params }) => {
   const news = await getNews(id);
   return (
     <MyContainer className="mt-7.5">
-      <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-9">
+      <div className="grid sm:grid-cols-12 gap-6">
+        <div className="sm:col-span-9">
           <NewsDetails news={news} />
         </div>
-        <div className="col-span-3">
+        <div className="sm:col-span-3">
           <LoginWith />
         </div>
       </div>
